@@ -1,5 +1,5 @@
 import epnsHelper, { InfuraSettings, NetWorkSettings, EPNSSettings } from '@epnsproject/backend-sdk-staging';
-import * as config from "./config/config";
+import config from "./config/config";
 import express, { json } from "express";
 import { exit } from 'process';
 
@@ -21,19 +21,19 @@ const infuraSettings: InfuraSettings = {
 const settings: NetWorkSettings = {
   // alchemy: config.alchemyAPI,
   infura: infuraSettings,
-  etherscan: config.default.etherscanAPI
+  etherscan: config.etherscanAPI
 }
 
 
 // EPNSSettings settings contains details on EPNS network, contract address and contract ABI
 const epnsSettings: EPNSSettings = {
-  network: config.default.web3RopstenNetwork,
-  contractAddress: config.default.deployedContract,
-  contractABI: config.default.deployedContractABI
+  network: config.web3RopstenNetwork,
+  contractAddress: config.deployedContract,
+  contractABI: config.deployedContractABI
 }
 
 let channelPrivateKey = privateKey
-const sdk = new epnsHelper(config.default.web3RopstenNetwork, channelPrivateKey, settings, epnsSettings)
+const sdk = new epnsHelper(config.web3RopstenNetwork, channelPrivateKey, settings, epnsSettings)
 
 let user = "0xfDdA054f4C5A9bCFC8512f5Cf220E6E77430C556"
 let title = "yield-chaser"
