@@ -36,10 +36,9 @@ let channelPrivateKey = privateKey
 const sdk = new epnsHelper(config.web3RopstenNetwork, channelPrivateKey, settings, epnsSettings)
 
 let user = "0xfDdA054f4C5A9bCFC8512f5Cf220E6E77430C556"
-let title = "yield-chaser"
-let message = ""
+let title = "new farm alert"
 const sendNotification = async (payloadTitle :string, payloadMessage :string, notificationType :number) => {
-  await sdk.sendNotification(user, title, message, payloadTitle, payloadMessage, notificationType, false)
+  await sdk.sendNotification(user, title, payloadMessage, payloadTitle, payloadMessage, notificationType, false)
 };
 
 
